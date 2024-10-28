@@ -72,6 +72,8 @@ class MyClass(GeneratedClass):
         self.bIsRunning = True
         request = create_multipart_request(url, 'file', image_path)
         response = urllib2.urlopen(request)
+        if len(respones.json()['face_names']) == 0:
+            return
         try:
             sentence = "\RSPD="+ str(100) + "\ "
             sentence += "\VCT="+ str(100) + "\ "

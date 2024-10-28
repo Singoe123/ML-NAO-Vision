@@ -9,8 +9,14 @@ import os
 known_face_encodings = []
 known_face_names = []
 
-known_images = ['marcelo.jpg', 'paula.jpg'] 
-known_names = ['Marcelo', 'Paula']
+known_images = [] 
+known_names = []
+
+image_folder = "images"
+for filename in os.listdir(image_folder):
+    if filename.endswith(".jpg") or filename.endswith(".png"):
+        known_images.append(filename)
+        known_names.append(os.path.splitext(filename)[0])
 
 def encode_faces():
     for image_path, name in zip(known_images, known_names):
