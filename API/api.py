@@ -15,7 +15,7 @@ known_names = []
 image_folder = "images"
 for filename in os.listdir(image_folder):
     if filename.endswith(".jpg") or filename.endswith(".png"):
-        known_images.append(filename)
+        known_images.append(os.path.join(image_folder, filename))
         known_names.append(os.path.splitext(filename)[0])
 
 def encode_faces():
